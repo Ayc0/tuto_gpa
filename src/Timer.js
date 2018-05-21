@@ -4,16 +4,16 @@ class Timer extends Component {
   state = { timer: 0 };
 
   componentDidMount() {
-    this.timer = setInterval(() => {
+    this.timerID = setInterval(() => {
       this.setState(({ timer }) => ({ timer: timer + 1 }));
     }, 1000);
   }
 
   componentWillUnmount() {
-    clearInterval(this.timer);
+    clearInterval(this.timerID);
   }
 
-  timer = null;
+  timerID = null;
 
   render() {
     return <div>{this.state.timer}</div>;
